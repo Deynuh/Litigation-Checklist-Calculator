@@ -11,8 +11,10 @@ function createData(file, date) {
   return {file, date};
 }
 
+const date = new Date();
+
 const rows = [
-  createData('Jurisdictional Response', '20 days'),
+  createData('Jurisdictional Response', ),
   createData('Response to Civil Claim', '21 days'),
   createData('Counterclaim', '21 days'),
   createData('NOCC and Counterclaim New Party', '60 days'),
