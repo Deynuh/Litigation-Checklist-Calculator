@@ -2,3 +2,20 @@
   text-align: center;
   margin: auto;
 }
+
+.NOCC, .CC, .RTCC {
+  width:500px; 
+  height:500px;
+  border: 1px solid white;
+  padding: 2rem 2rem;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 1rem;
+}
+
+.containers {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
