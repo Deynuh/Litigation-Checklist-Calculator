@@ -16,10 +16,13 @@ function createData(file, date) {
 
 
 export default function BasicTable() {
-  let[test,setTest] = useState("No Date Selected");
-  var jrDate,rccDate,ccDate,noccDate,tpnDate;
+  let[jrDate,setjrDate] = useState("No Date Selected");
+  let[rccDate,setrccDate] = useState("No Date Selected");
+  let[ccDate,setccDate] = useState("No Date Selected");
+  let[noccDate,setnoccDate] = useState("No Date Selected");
+  let[tpnDate,settpnDate] = useState("No Date Selected");
   var rows = [
-    createData('Jurisdictional Response', test),
+    createData('Jurisdictional Response', jrDate),
     createData('Response to Civil Claim', rccDate),
     createData('Counterclaim', ccDate),
     createData('NOCC and Counterclaim New Party', noccDate),
@@ -29,11 +32,16 @@ export default function BasicTable() {
   
   useEffect(()=>{
     const setDates = (eventData)=>{
-      var d = 14, m = 3, y = 2015;
-      var x = 366;
-      setTest(addDays(d, m, y, x));
+      var chosenDate = eventData;
+      var d = parseInt(chosenDate.slice(-2)), m = parseInt(chosenDate.slice(5,7)), y = parseInt(chosenDate.slice(0,5));
+      var x = [20,21,21,60,42];
       
-      console.log("date was selected:" + addDays(d, m, y, x));
+      setjrDate(addDays(d,m,y,x[0]));
+      setrccDate(addDays(d,m,y,x[1]));
+      setccDate(addDays(d,m,y,x[2]));
+      setnoccDate(addDays(d,m,y,x[3]));
+      settpnDate(addDays(d,m,y,x[4]));
+      console.log("date was selected");
     }
     const listener = EventEmitter.addListener('selectedDate',setDates);
     return ()=> {
@@ -147,7 +155,7 @@ export default function BasicTable() {
         <TableHead>
           <TableRow>
             <TableCell><b>Pleadings</b></TableCell>
-            <TableCell align="right"><b>Date</b></TableCell>
+            <TableCell align="right"><b>Date (DD-MM-YYYY)</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

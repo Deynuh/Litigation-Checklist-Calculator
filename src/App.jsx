@@ -5,6 +5,8 @@ import NOCCTable from './components/NOCC_Table'
 import CCTable from './components/CC_Table'
 import RTCCTable from './components/RTCC_Table'
 import DatePicker from './components/DatePicker'
+import DatePicker1 from './components/DatePicker1'
+import DatePicker2 from './components/DatePicker2'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,20 +22,20 @@ function App() {
       <div className="containers">
         <div className="NOCC">
           <h2> Notice of Civil Claim</h2>
-          <DatePicker></DatePicker>
+          <DatePicker/>
           <NOCCTable jrDate={"hi"}/>
           {/* this.addDays(20,09,2002,10) */}
         </div>
 
         <div className="CC">
           <h2> Counterclaim</h2>
-          <DatePicker></DatePicker>
+          <DatePicker1/>
           <CCTable></CCTable>
         </div>
 
         <div className="RTCC">
           <h2> Response to Civil Claim</h2>
-          <DatePicker></DatePicker>
+          <DatePicker2/>
           <RTCCTable></RTCCTable>
         </div>
       </div>
