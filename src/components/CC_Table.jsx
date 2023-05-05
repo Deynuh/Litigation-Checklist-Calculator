@@ -8,16 +8,12 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 function createData(file, date) {
-  return {file, date};
+  return { file, date};
 }
 
 const rows = [
-  createData('Jurisdictional Response', '20 days'),
-  createData('Response to Civil Claim', '21 days'),
-  createData('Counterclaim', '21 days'),
-  createData('NOCC and Counterclaim New Party', '60 days'),
-  createData('Third Party Notice', '42 days [1]'),
-
+  createData('Response to Counterclaim', '21 days'),
+  createData('Third Party Notice', '42 days [2]'),
 ];
 
 export default function BasicTable() {
