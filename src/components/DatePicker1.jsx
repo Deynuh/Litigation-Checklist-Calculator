@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react';
-import EventEmitter from '../utils/EventEmitter';
-const DatePicker = () => {
+import EventEmitter1 from '../utils/EventEmitter1';
+const DatePicker1 = () => {
   const [date, setDate] = useState('');
   const dateInputRef = useRef(null);
 
   const handleChange = (e) => {
     setDate(e.target.value);
     
-    EventEmitter.emit('selectedDate',e.target.value);
+    EventEmitter1.emit('selectedDate',e.target.value);
   };
 
   return (
@@ -22,4 +22,4 @@ const DatePicker = () => {
   );
 };
 
-export default DatePicker;
+export default DatePicker1;
