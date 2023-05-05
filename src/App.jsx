@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-
+import NOCCTable from './components/NOCC_Table'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,6 +16,7 @@ function App() {
       <div className="containers">
         <div className="NOCC">
           <h2> Notice of Civil Claim</h2>
+          <NOCCTable></NOCCTable>
         </div>
 
         <div className="CC">
